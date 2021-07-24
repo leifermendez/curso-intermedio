@@ -1,0 +1,18 @@
+<div class="login-page">
+    <form [formGroup]="loginForm" (submit)="login()">
+
+        <div class="field-group">
+            <label for="">Email</label>
+            <input formControlName="email" type="email">
+        </div>
+
+        <div class="field-group">
+            <label for="">Contraseña</label>
+            <input formControlName="password" type="password">
+        </div>
+
+        <div class="field-group">
+            <button [disabled]="!loginForm.valid">Enviar {{loginForm.valid | json}}</button>
+        </div>
+    </form>
+</div>

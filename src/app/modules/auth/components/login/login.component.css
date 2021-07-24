@@ -1,0 +1,43 @@
+.login-page{
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
+.login-page form{
+    padding: 1rem;
+    width: 25rem;
+    box-shadow: var(--box-shadow-1);
+    border-radius: var(--border-radius-1);
+}
+
+.login-page form .field-group{
+    padding: .5rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: .5rem;
+    border-bottom: solid 1px var(--main-color-2);
+}
+
+.login-page form .field-group label{
+    font-weight: 600;
+}
+
+
+.login-page form .field-group input{
+    font-weight: 500;
+    border: solid 1px var(--main-color-2);
+    padding: .25rem .5rem;
+    font-size: var(--font-size-1);
+    font-family: var(--font-family-1);
+    border-radius: var(--border-radius-1);
+}
+
+.login-page form .field-group button{
+    border: solid 1px var(--main-color-2);
+    border-radius: var(--border-radius-1);
+    background-color: var(--main-color-1);
+    color: var(--main-color-4);
+    padding: .5rem;
+}

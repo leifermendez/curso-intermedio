@@ -1,0 +1,24 @@
+.header{
+    display: flex;
+    width: 100%;
+    background-color: var(--main-color-2);
+    border-bottom: solid 1px #ebebeb;  
+    box-shadow: var(--box-shadow-1); 
+}
+
+.header ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+}
+
+.header ul li{
+    background-color: green;
+    padding: .5rem;
+    align-items: center;
+    align-content: center;
+}

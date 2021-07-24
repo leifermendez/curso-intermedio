@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+    --main-color-1:#237BFF;
+    --main-color-2:#F6F6F6;
+    --main-color-3:#FCFBFC;
+    --main-color-4:white;
+    --main-color-5:#1a1a1a;
+    --font-family-1:'Poppins', sans-serif;
+    --font-size-1:1rem;
+    --font-size-2:1.5rem;
+    --box-shadow-1: 20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;
+    --box-shadow-2:31px 31px 60px #bebebe,
+    -31px -31px 60px #ffffff;
+    --border-radius-1:.5rem;
+    --border-radius-2:.1rem;
+}
+
+html,body{
+    margin:0;
+    padding: 0;
+    background-color:var(--main-color-3);
+    font-family: var(--font-family-1);
+    font-size: var(--font-size-1);
+}
+
+textarea:focus, input:focus{
+    outline: none;
+}
+
+button:disabled{
+    opacity: .5;
+}
