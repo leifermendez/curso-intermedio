@@ -1,0 +1,69 @@
+<div class="sidebar-wrapper" [ngClass]="{'sidebar-hidden':(inSidebarFlag)}">
+  <div class="sidebar-btn">
+    <button (click)="toggleSidebar()" class="btn-float-switch">
+      <i *ngIf="!inSidebarFlag" class="uil uil-arrow-circle-left"></i>
+      <i *ngIf="inSidebarFlag" class="uil uil-arrow-circle-right"></i>
+    </button>
+  </div>
+  <div class="sidebar-tab">
+    <div (click)="changeTab('team_projects')" class="tab-item" [ngClass]="{'tab-active':(tab === 'team_projects')}">Team
+      Projects {{inSidebarFlag}}
+    </div>
+    <div (click)="changeTab('your_projects')" class="tab-item" [ngClass]="{'tab-active':(tab === 'your_projects')}">Your
+      Projects
+    </div>
+  </div>
+  <div class="sidebar-content">
+    <ng-container [ngSwitch]="tab">
+
+      <div *ngSwitchCase="'team_projects'">
+        <ng-container *ngTemplateOutlet="tabTeam"></ng-container>
+      </div>
+
+      <div *ngSwitchCase="'your_projects'">
+        <div>NADA</div>
+      </div>
+
+    </ng-container>
+
+  </div>
+</div>
+
+
+<!-- **** TEMPLATE TAB **** -->
+<ng-template #tabTeam>
+  <ng-container>
+    <div *ngFor="let card of projectList">
+      <ng-container *ngTemplateOutlet="cardTemplate;context:{data:card}"></ng-container>
+    </div>
+  </ng-container>
+
+</ng-template>
+
+<!-- *** TEMPLTE CARD **** -->
+
+<ng-template #cardTemplate let-data="data">
+  <div class="card-project">
+    <div class="d-flex a-center">
+      <img class="logo-brand"
+           src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnyoRlNKowwtW-HpOMqyTJOQIzzZk4KHByiA&usqp=CAU"
+           alt="">
+      <div class="card-text">
+        <div class="title-card">{{data?.title | slice:0:25}}</div>
+        <div class="sub-title-card"> {{amount| transforText:currentCurrency}}</div>
+      </div>
+    </div>
+    <div class="options-card">
+      <button>
+        <i class="uil uil-ellipsis-v"></i>
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<!-- **** TEMPLATE TAB **** -->
+<ng-template #tabYourProjects>
+
+  <div>b</div>
+</ng-template>
+

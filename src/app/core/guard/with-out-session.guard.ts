@@ -16,13 +16,14 @@ export class WithOutSessionGuard implements CanActivate {
 
     const checkCookie = this.cookieService.get('token')
     const checkBoolean = (checkCookie === undefined);
-    if (!checkBoolean) {
-      //TODO: Redirecionar
-      this.router.navigate(['/', 'task'])
-      return false;
-    } else {
-      return true
-    }
+    return  true
+    // if (!checkBoolean) {
+    //   //TODO: Redirecionar
+    //   this.router.navigate(['/', 'task'])
+    //   return false;
+    // } else {
+    //   return true
+    // }
   }
 
 

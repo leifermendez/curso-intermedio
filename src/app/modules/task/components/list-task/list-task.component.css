@@ -1,0 +1,75 @@
+.list-task {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 4rem 0 0 20rem;
+}
+
+.list-task.sidebar-hidden {
+  padding-left: 5rem;
+}
+
+.task-buttons {
+  display: flex;
+  gap: 1rem;
+  /*background-color: red;*/
+  padding: 1.5rem 2rem
+}
+
+
+.task-buttons .btn-option {
+  background-color: #EFEFEF;
+  border: 0;
+  padding: .5rem;
+  font-family: var(--font-family-1);
+  border-radius: var(--border-radius-2);
+  font-weight: 600;
+}
+
+.task-buttons .btn-primary{
+  background-color: var(--main-color-1);
+  color: var(--main-color-4);
+}
+
+.task-columns{
+  padding: 0 2rem;
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  gap: 2rem;
+}
+
+.task-columns .column-item{
+  border-top: solid 3px transparent;
+  width: 100%;
+  background-color: #F6F6F6;
+  min-height: 50rem;
+}
+
+.task-columns .column-item:nth-child(1){
+  border-color: var(--main-color-7);
+}
+
+
+.task-columns .column-item:nth-child(2){
+  border-color: var(--main-color-1);
+}
+
+.task-columns .column-item:nth-child(3){
+  border-color: var(--main-color-6);
+}
+
+.task-columns .column-header{
+  padding: .5rem 1rem;
+  font-weight: 600;
+  border-bottom: solid 1px #EFEFEF;
+}
+
+
+.task-columns .column-list-task{
+  padding: .5rem;
+}
+
+.task-columns .column-list-task .card-wrapper{
+  padding: .75rem .5rem;
+}

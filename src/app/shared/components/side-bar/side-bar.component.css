@@ -1,0 +1,101 @@
+.sidebar-wrapper {
+  transition: ease 150ms;
+  background: var(--main-color-4);
+  width: 20rem;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  height: 100%;
+  border-right: solid 1px #ebebeb;
+}
+
+.sidebar-wrapper.sidebar-hidden{
+  transition: ease 150ms;
+  transform: translateX(-15rem);
+}
+
+
+.sidebar-wrapper .sidebar-btn{
+  position: absolute;
+  top: 6.5rem;
+  right: -1rem;
+  padding: .5rem;
+}
+
+.sidebar-wrapper .sidebar-btn button{
+  padding: .5rem;
+  border-radius: 10rem;
+  border:0;
+  cursor: pointer;
+  background-color: var(--main-color-4);
+  box-shadow: var(--box-shadow-1);
+}
+
+.sidebar-wrapper .sidebar-btn button i{
+  font-size: 1.5rem;
+}
+
+.sidebar-tab{
+  padding-top: 4rem;
+  display: flex;
+  /*background-color: red;*/
+  justify-content: space-between;
+}
+
+
+.sidebar-tab .tab-item{
+  cursor: pointer;
+  padding: 1rem;
+  width: 100%;
+  font-size: 80%;
+  /*background-color: green;*/
+  display: flex;
+  border-bottom: solid 2px transparent;
+  justify-content: center;
+}
+
+.sidebar-tab .tab-active{
+  font-weight: 600;
+  border-color: var(--main-color-1);
+}
+
+
+.sidebar-content {
+}
+
+.card-project{
+  display: flex;
+  padding: .5rem;
+  justify-content: space-between;
+}
+
+.card-project .logo-brand{
+  width: 50px;
+  height: 50px;
+}
+
+.card-project .card-text{
+  padding: 0 .5rem;
+  font-size: 80%;
+}
+.card-project .options-card{
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
+
+.card-project .card-text .title-card{
+  font-weight: 600;
+}
+
+.card-project .options-card button{
+  background-color: transparent;
+  border:0;
+  font-size: var(--font-size-2);
+}
+
+
+.card-project .options-card button i{
+  color: #c0c0c0;
+}

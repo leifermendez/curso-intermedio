@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   api: 'http://localhost:3000',
+  apiFake: 'https://jsonplaceholder.typicode.com',
   listOrigins: ['localhost:111']
 };
 

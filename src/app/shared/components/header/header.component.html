@@ -1,8 +1,33 @@
 <div class="header">
     <ul>
-        <li><i class="uil uil-check-square"></i></li>
-        <li><i class="uil uil-box"></i></li>
-        <li><i class="uil uil-list-ul"></i></li>
-        <li><i class="uil uil-list-ul"></i></li>
+        <li [routerLinkActive]="'link-active'" [routerLinkActiveOptions]="{exact:true}"
+            *ngFor="let item of menuItems;let i = index">
+          <ng-container *ngIf="i===1" >
+            <ng-container *ngTemplateOutlet="inputSrc"></ng-container>
+          </ng-container>
+
+          <ng-container *ngIf="i!==1">
+            <ng-container *ngTemplateOutlet="elementMenu;context:{data:item}"></ng-container>
+
+          </ng-container>
+        </li>
     </ul>
 </div>
+
+<!-- TEMPLATE ELEMENT --->
+<ng-template #elementMenu let-myvar="data">
+  <div>
+    <span>{{myvar.name}}</span>
+    <i class="{{myvar.icon}}"></i>
+  </div>
+</ng-template>
+
+<ng-template #inputSrc>
+  <div class="input-src-wrapper">
+    <span class="icon-search">
+      <i class="uil uil-search"></i>
+    </span>
+    <input type="text">
+  </div>
+</ng-template>
+

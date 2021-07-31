@@ -1,1 +1,35 @@
 <app-header></app-header>
+<app-side-bar></app-side-bar>
+
+<div class="list-task" [ngClass]="{'sidebar-hidden':customService.sidebarFlag}">
+  <div class="task-buttons">
+    <button  class="btn-option btn-primary">
+      <span class="icon">
+        <i class="uil uil-plus"></i>
+      </span>
+      <span class="text">Add Task</span>
+    </button>
+    <button  class="btn-option ">
+      <span class="icon">
+        <i class="uil uil-plus"></i>
+      </span>
+      <span class="text">Add Task</span>
+    </button>
+  </div>
+  <div class="task-columns">
+    <div *ngFor="let a of [1,1,1]" class="column-item">
+      <div class="column-header">
+        Task
+      </div>
+      <div class="column-list-task">
+        <ng-container *ngFor="let card of listTask">
+          <div class="card-wrapper">
+            <app-card-task></app-card-task>
+          </div>
+        </ng-container>
+      </div>
+
+
+    </div>
+  </div>
+</div>

@@ -11,6 +11,6 @@ export class TaskService {
   constructor(private http: HttpClient) { }
 
   public getTask(): Observable<any> {
-    return this.http.get(`${environment.api}/task`)
+    return this.http.get(`${environment.apiFake}/posts`)
   }
 }
