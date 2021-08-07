@@ -3,9 +3,21 @@
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
+    "baseUrl": "./",
     "types": [
       "jasmine"
-    ]
+    ],
+    "paths": {
+      "@core/*": [
+        "src/app/core/*"
+      ],
+      "@modules/*": [
+        "src/app/modules/*"
+      ],
+      "@sharedFile/*": [
+        "src/app/shared/*"
+      ]
+    }
   },
   "files": [
     "src/test.ts",

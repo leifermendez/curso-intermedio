@@ -1,7 +1,8 @@
 import { AuthService } from './../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CookieService } from 'ngx-cookie';
+import { Router } from '@angular/router';
+// import { CookieService } from 'ngx-cookie';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ import { CookieService } from 'ngx-cookie';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup = new FormGroup({})
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private cookieService: CookieService) { }
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) { }
 
   ngOnInit(): void {
     this.loginForm = this.fb.group(
@@ -26,9 +27,8 @@ export class LoginComponent implements OnInit {
     const { email, password } = this.loginForm.value;
     this.authService.login(email, password)
       .subscribe(({ data }) => {
-        this.cookieService.put('token', data.token)
-
         //TODO: Todo es correcto!
+        this.router.navigate(['/', 'task'])
         console.log('RES-->', data);
 
       }, err => {

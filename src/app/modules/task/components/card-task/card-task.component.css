@@ -9,6 +9,15 @@
   justify-content: space-between;
 }
 
+.card-item.card-open{
+  min-height: 10rem;
+  height: auto;
+}
+
+.card-item.card-focus{
+  border: solid 2px var(--main-color-1);
+}
+
 .card-item .title{
   font-weight: 600;
 }
@@ -21,6 +30,7 @@
 .card-item .tag{
   display: flex;
   padding: .5rem 0;
+  gap: .25rem;
 }
 
 .card-item .tag span{
@@ -55,4 +65,8 @@
 .card-item .card-date{
   font-size: 80%;
   font-weight: 600;
+}
+
+.card-item .card-description{
+
 }

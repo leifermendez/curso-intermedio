@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CustomService} from "../../services/custom.service";
+import {environment} from "../../../../environments/environment";
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,7 @@ import {CustomService} from "../../services/custom.service";
 export class HeaderComponent implements OnInit {
   menuItems: Array<any> = [
     {
-      name: 'To-Do',
+      name: `To-Do ${environment.nameApp}`,
       icon: 'uil uil-check-square',
       template: 'A',
       route:['/']

@@ -24,7 +24,7 @@
       <div class="column-list-task">
         <ng-container *ngFor="let card of listTask">
           <div class="card-wrapper">
-            <app-card-task></app-card-task>
+            <app-card-task [data]="card"></app-card-task>
           </div>
         </ng-container>
       </div>
