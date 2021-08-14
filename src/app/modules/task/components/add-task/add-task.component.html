@@ -1,0 +1,14 @@
+<p>add-task works!</p>
+<button (click)="bsModalRef.hide()">Cerrar</button>
+{{formAddTask.valid | json}}
+<form [formGroup]="formAddTask" (submit)="save()">
+  <div>
+    <input formControlName="title" type="text">
+  </div>
+  <div>
+    <textarea formControlName="description" name="" id="" cols="30" rows="10"></textarea>
+  </div>
+  <div>
+    <button [disabled]="formAddTask.invalid" class="btn btn-primary">Send</button>
+  </div>
+</form>

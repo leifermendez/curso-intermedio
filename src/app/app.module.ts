@@ -7,6 +7,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SocketIoConfig, SocketIoModule } from "ngx-socket-io";
+import {CookieModule} from "ngx-cookie";
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {ModalModule} from "ngx-bootstrap/modal";
 
 const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
@@ -19,7 +22,10 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
     HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    SocketIoModule.forRoot(config)
+    CookieModule.forRoot(),
+    SocketIoModule.forRoot(config),
+    BrowserAnimationsModule,
+    ModalModule.forRoot()
   ],
   providers: [
     {

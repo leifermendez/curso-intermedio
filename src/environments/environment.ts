@@ -4,8 +4,7 @@
 
 export const environment = {
   production: false,
-  api: 'http://localhost:3000',
-  apiFake: 'http://localhost:3000/api',
+  api: 'http://localhost:3000/api/1.0',
   listOrigins: ['localhost:111'],
   nameApp:'VersionDEV'
 };

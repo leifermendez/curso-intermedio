@@ -4,6 +4,8 @@ import { CustomService } from "@sharedFile/services/custom.service";
 import { Subscription } from "rxjs";
 import { HandleEventsService } from "@modules/task/services/handle-events.service";
 import { CardData } from "@core/models/card-data";
+import {BsModalService} from "ngx-bootstrap/modal";
+import {AddTaskComponent} from "@modules/task/components/add-task/add-task.component";
 
 @Component({
   selector: 'app-list-task',
@@ -28,21 +30,35 @@ export class ListTaskComponent implements OnInit, OnDestroy {
   listTask: CardData[] = [];
   listSubs$: Array<Subscription> = []
 
-  constructor(private taskService: TaskService, public customService: CustomService,
-    private handleEventsService: HandleEventsService) {
+  constructor(public taskService: TaskService, public customService: CustomService,
+    private handleEventsService: HandleEventsService, private bsModalService:BsModalService) {
   }
 
   ngOnInit(): void {
     this.taskService.getTask()
-      .subscribe(res => { //TODO: HttpClient <--- Angular, Activate Route NOT se necesita unsubscribe
-        this.listTask = res;
+      .subscribe(({data}) => { //TODO: HttpClient <--- Angular, Activate Route NOT se necesita unsubscribe
+        this.listTask = data;
       },
         err => {
           console.log('___ERROR__', err)
         })
 
-    this.handleEventsService.callCard.subscribe(res => {
-      // console.log('Recibiendo HostListener', res)
+    const initialState = {
+      list: [
+        'Open a modal with component',
+        'Pass your data',
+        'Do something else',
+        '...'
+      ],
+      title: 'Modal with component'
+    };
+    this.taskService.triggerModal.subscribe(data => {
+      //ignoreBackdropClick
+      this.bsModalService.show(AddTaskComponent,
+        {
+          initialState,
+          ignoreBackdropClick:true
+        })
     })
     this.listenSub()
   }

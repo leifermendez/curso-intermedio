@@ -29,7 +29,6 @@ export class LoginComponent implements OnInit {
       .subscribe(({ data }) => {
         //TODO: Todo es correcto!
         this.router.navigate(['/', 'task'])
-        console.log('RES-->', data);
 
       }, err => {
         //TODO: Algo malo paso

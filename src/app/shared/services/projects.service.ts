@@ -13,6 +13,6 @@ export class ProjectsService {
   }
 
   getProjects():Observable<any> {
-    return this.http.get(`${environment.apiFake}/posts?limit=10`)
+    return this.http.get(`${environment.api}/posts?limit=10`)
   }
 }
